@@ -1,63 +1,9 @@
 import { Component } from 'react';
-import PropTypes from 'prop-types';
+import Statistics from '../statistics/Statistics';
+import FeedbackOptions from 'components/options/FeedbackOptions';
+import Section from 'components/section/Section';
+import Notification from 'components/notification/Notification';
 import './Feedback.css';
-
-const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
-  <div className="statistics-container">
-    <p className="statistics-text">Good: {good}</p>
-    <p className="statistics-text">Neutral: {neutral}</p>
-    <p className="statistics-text">Bad: {bad}</p>
-    <p className="statistics-text">Total: {total}</p>
-    <p className="statistics-text">Positive feedback: {positivePercentage}%</p>
-  </div>
-);
-
-Statistics.propTypes = {
-  good: PropTypes.number.isRequired,
-  neutral: PropTypes.number.isRequired,
-  bad: PropTypes.number.isRequired,
-  total: PropTypes.number.isRequired,
-  positivePercentage: PropTypes.number.isRequired,
-};
-
-const FeedbackOptions = ({ options, onLeaveFeedback }) => (
-  <div className="feedback-options-container">
-    {options.map(option => (
-      <button
-        key={option}
-        onClick={() => onLeaveFeedback(option)}
-        className="feedback-btn"
-        type="button"
-        name={option}
-      >
-        {option}
-      </button>
-    ))}
-  </div>
-);
-
-FeedbackOptions.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-  onLeaveFeedback: PropTypes.func.isRequired,
-};
-
-const Section = ({ title, children }) => (
-  <div className="section-container">
-    <h2 className="section-title">{title}</h2>
-    {children}
-  </div>
-);
-
-Section.propTypes = {
-  title: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-};
-
-const Notification = ({ message }) => <p className="notification">{message}</p>;
-
-Notification.propTypes = {
-  message: PropTypes.string.isRequired,
-};
 
 export class Feedback extends Component {
   state = {
