@@ -1,0 +1,35 @@
+body {
+  background-color: #b7b7b7;
+  text-align: center;
+}
+
+.feedback-btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.feedback-btn:hover {
+  background-color: #5b5b5b;
+  color: white;
+  transition: color 250ms linear, background-color 250ms linear;
+}
+
+.feedback-btn:not(:last-child) {
+  margin-right: 20px;
+}
+
+.statistics-text {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.notification {
+  font-size: 24px;
+  font-weight: 700;
+  color: red;
+}

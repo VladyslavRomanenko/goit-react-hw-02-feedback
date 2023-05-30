@@ -1,4 +1,6 @@
-/* @import-normalize; */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+
+@import url('./components/feedback/Feedback.css');
 
 body {
   margin: 0;
